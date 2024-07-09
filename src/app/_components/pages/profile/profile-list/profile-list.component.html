@@ -4,31 +4,26 @@
     <table class="table">
         <thead>
         <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">Id</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Perfil</th>
+            <th scope="col">Idade</th>
+            <th scope="col">Ativo</th>
+            <th scope="col">País</th>
+            <th scope="col">Nível de Experiência</th>
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>mdo</td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>fat</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>twitter</td>
+        <tr *ngFor="let profile of profiles">
+            <th scope="row">{{ profile.id }}</th>
+            <td>{{ profile.nome }}</td>
+            <td>{{ profile.perfil }}</td>
+            <td>{{ profile.idade }}</td>
+            <td>{{ profile.ativo ? 'Sim' : 'Não' }}</td>
+            <td>{{ profile.pais }}</td>
+            <td>{{ profile.nivelExperiencia }}</td>
         </tr>
         </tbody>
     </table>
-    <button type="button" class="btn btn-info">Cadastrar</button>
+    <a type="button" class="btn btn-info" routerLink="/profile/create">Cadastrar</a>
 </div>
