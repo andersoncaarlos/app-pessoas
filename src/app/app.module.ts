@@ -9,6 +9,7 @@ import { ProfileCreateUpdateComponent } from './_components/pages/profile/profil
 import { HomeComponent } from './_components/pages/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfileService } from './services/profile.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,9 @@ import { ProfileService } from './services/profile.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     ProfileService

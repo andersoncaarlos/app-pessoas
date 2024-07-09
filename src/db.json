@@ -13,12 +13,12 @@
         {
             "id" : 2,
             "nome" : "Daniele Evelyn de Sousa",
-            "perfil" : "Usuário",
+            "perfil" : "Administrador",
             "idade" : 24,
             "email" : "daniele@gmail.com",
             "ativo" : true,
             "pais" : "Brasil",
-            "nivelExperiencia" : ""
+            "nivelExperiencia" : "Pleno"
         },
         {
             "id" : 3,
