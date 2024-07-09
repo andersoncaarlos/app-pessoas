@@ -7,6 +7,8 @@ import { NavbarComponent } from './_components/navbar/navbar.component';
 import { ProfileListComponent } from './_components/pages/profile/profile-list/profile-list.component';
 import { ProfileCreateUpdateComponent } from './_components/pages/profile/profile-create-update/profile-create-update.component';
 import { HomeComponent } from './_components/pages/home/home.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ProfileService } from './services/profile.service';
 
 @NgModule({
   declarations: [
@@ -18,9 +20,12 @@ import { HomeComponent } from './_components/pages/home/home.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    ProfileService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
