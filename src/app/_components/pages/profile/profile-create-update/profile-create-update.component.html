@@ -16,6 +16,13 @@
             <label for="email" class="form-label">E-mail<span class="text-danger">*</span>:</label>
             <input type="email" class="form-control" id="email" aria-describedby="emailHelp" formControlName="email">
           </div>
+          <div class="mb-3">
+            <label for="ativo" class="form-label">Ativo:</label>
+            <select class="form-control" id="ativo" formControlName="ativo">
+                <option [value]="true">Sim</option>
+                <option [value]="false">Não</option>
+            </select>
+        </div>
         <div class="mb-3">
             <label for="pais" class="form-label">País:</label>
             <input type="text" class="form-control" id="pais" formControlName="pais">
@@ -24,7 +31,6 @@
             <label for="nome" class="form-label">Nível de Experiência:</label>
             <input type="text" class="form-control" id="nome" formControlName="nivelExperiencia">
         </div>
-
 
         <button type="submit" class="btn btn-info" [disabled]="!profileForm.valid">Cadastrar</button>
     </form>

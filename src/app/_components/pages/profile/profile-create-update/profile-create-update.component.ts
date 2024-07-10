@@ -20,6 +20,7 @@ export class ProfileCreateUpdateComponent {
       perfil: ['', Validators.required],
       idade: [0, [Validators.required, Validators.min(0)]],
       email: ['', [Validators.required, Validators.email]],
+      ativo: [true],
       pais: [''],
       nivelExperiencia: ['']
     });
