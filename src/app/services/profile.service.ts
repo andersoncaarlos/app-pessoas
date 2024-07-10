@@ -14,4 +14,8 @@ export class ProfileService {
   buscarTodos(): Observable<Pessoa[]> {
     return this.http.get<Pessoa[]>(this.api)
   }
+
+  cadastrar(pessoa: Pessoa): Observable<Pessoa> {
+    return this.http.post<Pessoa>(this.api, pessoa);
+  }
 }

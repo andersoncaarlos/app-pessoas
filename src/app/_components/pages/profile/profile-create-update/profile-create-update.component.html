@@ -1,27 +1,27 @@
 <div>
     <form (ngSubmit)="onSubmit()" [formGroup]="profileForm">
         <div class="mb-3">
-            <label for="nome" class="form-label">Nome:</label>
+            <label for="nome" class="form-label">Nome<span class="text-danger">*</span>:</label>
             <input type="text" class="form-control" id="nome" formControlName="nome">
         </div>
         <div class="mb-3">
-            <label for="perfil" class="form-label">Perfil:</label>
+            <label for="perfil" class="form-label">Perfil<span class="text-danger">*</span>:</label>
             <input type="text" class="form-control" id="perfil" formControlName="perfil">
         </div>
         <div class="mb-3">
-            <label for="idade" class="form-label">Idade:</label>
+            <label for="idade" class="form-label">Idade<span class="text-danger">*</span>:</label>
             <input type="number" class="form-control" id="idade" formControlName="idade">
         </div>
         <div class="mb-3">
-            <label for="email" class="form-label">E-mail:</label>
+            <label for="email" class="form-label">E-mail<span class="text-danger">*</span>:</label>
             <input type="email" class="form-control" id="email" aria-describedby="emailHelp" formControlName="email">
           </div>
         <div class="mb-3">
-            <label for="pais" class="form-label">País</label>
+            <label for="pais" class="form-label">País:</label>
             <input type="text" class="form-control" id="pais" formControlName="pais">
         </div>
         <div class="mb-3">
-            <label for="nome" class="form-label">Nível de Experiência</label>
+            <label for="nome" class="form-label">Nível de Experiência:</label>
             <input type="text" class="form-control" id="nome" formControlName="nivelExperiencia">
         </div>
 

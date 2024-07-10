@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ProfileService } from 'src/app/services/profile.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-profile-create-update',
@@ -8,17 +10,27 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class ProfileCreateUpdateComponent {
 
-  onSubmit() {
 
+  profileForm: FormGroup;
+
+  constructor(private fb: FormBuilder, private profileService: ProfileService, private toastr: ToastrService) {    
+    this.profileForm = this.fb.group({
+      nome: ['', Validators.required],
+      perfil: ['', Validators.required],
+      idade: [0, [Validators.required, Validators.min(0)]],
+      email: ['', [Validators.required, Validators.email]],
+      pais: [''],
+      nivelExperiencia: ['']
+    });
   }
 
-  nome = '';
-  profileForm = new FormGroup({
-    nome: new FormControl('', Validators.required),
-    perfil: new FormControl('', Validators.required),
-    idade: new FormControl(0, Validators.required),
-    email: new FormControl('', [Validators.required, Validators.email]),
-    pais: new FormControl(''),
-    nivelExperiencia: new FormControl('')
-  })
+  onSubmit(): void {
+    if (this.profileForm.valid) {
+      const profile = this.profileForm.value;
+      this.profileService.cadastrar(profile).subscribe(result => {
+        this.toastr.success('Pessoa cadastrada com sucesso!!!');
+        this.profileForm.reset();
+      });
+    }
+  }
 }
