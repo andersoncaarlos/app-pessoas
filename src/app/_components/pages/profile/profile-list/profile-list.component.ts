@@ -7,15 +7,6 @@ import { ProfileService } from 'src/app/services/profile.service';
   templateUrl: './profile-list.component.html',
   styleUrls: ['./profile-list.component.css']
 })
-export class ProfileListComponent implements OnInit {
-
-  constructor(private profileService: ProfileService) {}
-  profiles: Pessoa[] = [];
-
-  ngOnInit() {
-    this.profileService.buscarTodos().subscribe((result: Pessoa[]) => {
-      this.profiles = result;
-    });
-  }
+export class ProfileListComponent {
 
 }

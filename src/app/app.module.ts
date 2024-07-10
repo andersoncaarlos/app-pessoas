@@ -12,6 +12,7 @@ import { ProfileService } from './services/profile.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { TableComponent } from './_components/table/table.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ToastrModule } from 'ngx-toastr';
     NavbarComponent,
     ProfileListComponent,
     ProfileCreateUpdateComponent,
-    HomeComponent
+    HomeComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
