@@ -26,4 +26,8 @@ export class ProfileService {
   getPessoaById(id: number): Observable<Pessoa> {
     return this.http.get<Pessoa>(`${this.api}/${id}`);
   }
+
+  deletar(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.api}/${id}`);
+  }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ProfileService } from 'src/app/services/profile.service';
 import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -24,7 +24,7 @@ export class ProfileCreateUpdateComponent implements OnInit {
     this.profileForm = this.fb.group({
       nome: ['', Validators.required],
       perfil: ['', Validators.required],
-      idade: [0, [Validators.required, Validators.min(0)]],
+      idade: [0, [Validators.required, this.maxValue(99) , Validators.min(0)]],
       email: ['', [Validators.required, Validators.email]],
       ativo: [true],
       pais: [''],
@@ -58,5 +58,15 @@ export class ProfileCreateUpdateComponent implements OnInit {
         });
       }
     }
+  }
+
+  maxValue(max: number) {
+    return (control: AbstractControl): { [key: string]: any } | null => {
+      const value = control.value;
+      if (value !== null && value !== undefined && (isNaN(value) || value > max)) {
+        return { 'maxValue': { max } };
+      }
+      return null;
+    };
   }
 }
