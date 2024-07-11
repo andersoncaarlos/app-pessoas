@@ -18,4 +18,12 @@ export class ProfileService {
   cadastrar(pessoa: Pessoa): Observable<Pessoa> {
     return this.http.post<Pessoa>(this.api, pessoa);
   }
+
+  atualizar(id: number, pessoa: Pessoa): Observable<Pessoa> {
+    return this.http.put<Pessoa>(`${this.api}/${id}`, pessoa);
+  }
+
+  getPessoaById(id: number): Observable<Pessoa> {
+    return this.http.get<Pessoa>(`${this.api}/${id}`);
+  }
 }
