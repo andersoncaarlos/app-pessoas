@@ -49,16 +49,6 @@
       "pais": "Brasil",
       "nivelExperiencia": "Pleno",
       "id": "5"
-    },
-    {
-      "nome": "asdasd",
-      "perfil": "sadasd",
-      "idade": 222222,
-      "email": "sadasdas@sadasd",
-      "ativo": true,
-      "pais": "asdasd",
-      "nivelExperiencia": "asdasd",
-      "id": "6"
     }
   ]
 }

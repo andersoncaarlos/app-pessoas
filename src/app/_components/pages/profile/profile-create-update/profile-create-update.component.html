@@ -3,18 +3,34 @@
         <div class="mb-3">
             <label for="nome" class="form-label">Nome<span class="text-danger">*</span>:</label>
             <input type="text" class="form-control" id="nome" formControlName="nome">
+            <div *ngIf="nome?.touched && !nome?.valid" class="text-danger">
+                <p>O campo nome é obrigatório!</p>
+            </div>
         </div>
         <div class="mb-3">
             <label for="perfil" class="form-label">Perfil<span class="text-danger">*</span>:</label>
             <input type="text" class="form-control" id="perfil" formControlName="perfil">
+            <div *ngIf="perfil?.touched && !perfil?.valid" class="text-danger">
+                <p>O campo perfil é obrigatório!</p>
+            </div>
         </div>
         <div class="mb-3">
             <label for="idade" class="form-label">Idade<span class="text-danger">*</span>:</label>
             <input type="number" class="form-control" id="idade" formControlName="idade">
+            <div>
+                <div *ngIf="idade?.touched && !idade?.valid" class="text-danger">
+                    <p>O campo idade inválido!</p>
+                </div>
+            </div>
         </div>
         <div class="mb-3">
             <label for="email" class="form-label">E-mail<span class="text-danger">*</span>:</label>
             <input type="email" class="form-control" id="email" aria-describedby="emailHelp" formControlName="email">
+            <div>
+                <div *ngIf="email?.touched && !email?.valid" class="text-danger">
+                    <p>O campo e-mail inválido!</p>
+                </div>
+            </div>
           </div>
           <div class="mb-3">
             <label for="ativo" class="form-label">Ativo:</label>
