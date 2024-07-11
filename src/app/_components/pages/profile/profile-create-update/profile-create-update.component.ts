@@ -57,7 +57,7 @@ export class ProfileCreateUpdateComponent implements OnInit {
     if (this.pessoaId) {
       this.profileService.atualizar(this.pessoaId, profile).subscribe(
         result => {
-          this.toastr.success('Pessoa atualizada com sucesso!!!');
+          this.toastr.success('Pessoa atualizada com sucesso!');
           this.profileForm.reset();
           this.router.navigateByUrl('/profiles');
         },

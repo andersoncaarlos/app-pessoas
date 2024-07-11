@@ -27,7 +27,7 @@ export class TableComponent {
   deletarPessoa(id: number) {
     Swal.fire({
       title: 'Deseja realmente excluir esse registro?',
-      text: 'Esta ação não pode ser revertida!!!',
+      text: 'Esta ação não pode ser revertida.',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonText: 'Sim, deletar!',
