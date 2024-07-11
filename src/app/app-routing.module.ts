@@ -5,7 +5,7 @@ import { ProfileCreateUpdateComponent } from './_components/pages/profile/profil
 import { TableComponent } from './_components/table/table.component';
 
 const routes: Routes = [
-    {path: "home", component: HomeComponent},
+    {path: "", component: HomeComponent},
     {path: "profiles", component: TableComponent},
     {path: "profile/create", component: ProfileCreateUpdateComponent},
     {path: "profile/edit/:id", component: ProfileCreateUpdateComponent},     
